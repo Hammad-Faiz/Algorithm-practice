@@ -50,6 +50,10 @@ public class Exercise01_Interfaces {
         public double area() {
             return width * height;
         }
+
+        public int randome() {
+            return 2 * 2;
+        }
     };
 
 
@@ -67,5 +71,7 @@ public class Exercise01_Interfaces {
         for (Shape shape : shapes) {
           System.out.println(shape.area());
         };
+
+        System.out.println(rectangle.randome());
     };
 }
