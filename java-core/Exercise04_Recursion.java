@@ -45,3 +45,16 @@ public class Exercise04_Recursion {
         countDown(5);                       // should print 5 4 3 2 1 Go!
     }
 }
+
+
+
+//Person 4: "I need factorial(4), gimme factorial(3) first" → waits
+//Person 3: "I need factorial(3), gimme factorial(2) first" → waits
+//Person 2: "I need factorial(2), gimme factorial(1) first" → waits
+//Person 1: "factorial(1)? that's just 1, here" → done, goes home
+//
+//Person 2 gets 1 back: "2 * 1 = 2, here you go" → done, goes home
+//Person 3 gets 2 back: "3 * 2 = 6, here you go" → done, goes home
+//Person 4 gets 6 back: "4 * 6 = 24, here you go" → done, goes home
+
+
