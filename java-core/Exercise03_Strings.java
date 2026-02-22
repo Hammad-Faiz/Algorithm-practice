@@ -29,29 +29,32 @@ public class Exercise03_Strings {
 
         // --- TODO 2 ---
         String toReverse = "hello";
-        String reverseString = "";
+        StringBuilder reverseString = new StringBuilder();
         for (int i = toReverse.length() - 1; i >= 0; i--) {
-            reverseString = reverseString += toReverse.charAt(i);
+            reverseString.append(toReverse.charAt(i));
         }
-        System.out.println(reverseString);
+        System.out.println(reverseString.toString());
 
 
         // --- TODO 3 ---
         String palindrome = "racecar";
-        String reversepalindrome = "";
+        StringBuilder reversePalindrome = new StringBuilder();
         for (int i = palindrome.length() - 1; i >= 0; i--) {
-            reversepalindrome += palindrome.charAt(i);
+            reversePalindrome.append(palindrome.charAt(i));
         }
-        System.out.println(reversepalindrome);
-        System.out.println(palindrome.equals(reversepalindrome));
+        if (palindrome.equals(reversePalindrome.toString())) {
+            System.out.println(palindrome + " is a palindrome");
+        } else {
+            System.out.println(palindrome + " is not a palindrome");
+        }
+
 
         // --- TODO 4 ---
         String sentence = "hello world";
         int countLInSentence = 0;
-        for (int i = 0; i <= sentence.length() - 1; i++) {
-            char character = sentence.charAt(i);
-            if (character == 'l') {
-             countLInSentence += 1;
+        for (int i = 0; i < sentence.length(); i++) {
+            if (sentence.charAt(i) == 'l') {
+             countLInSentence ++;
             }
         }
         System.out.println(countLInSentence);
