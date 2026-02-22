@@ -21,18 +21,40 @@ public class Exercise03_Strings {
 
         // --- TODO 1 ---
         String word = "interview";
+        System.out.println(word.length());
+        System.out.println(word.charAt(4));
+        System.out.println(word.toUpperCase());
+        System.out.println(word.substring(0, 5));
 
 
         // --- TODO 2 ---
         String toReverse = "hello";
+        String reverseString = "";
+        for (int i = toReverse.length() - 1; i >= 0; i--) {
+            reverseString = reverseString += toReverse.charAt(i);
+        }
+        System.out.println(reverseString);
 
 
         // --- TODO 3 ---
         String palindrome = "racecar";
-
+        String reversepalindrome = "";
+        for (int i = palindrome.length() - 1; i >= 0; i--) {
+            reversepalindrome += palindrome.charAt(i);
+        }
+        System.out.println(reversepalindrome);
+        System.out.println(palindrome.equals(reversepalindrome));
 
         // --- TODO 4 ---
         String sentence = "hello world";
+        int countLInSentence = 0;
+        for (int i = 0; i <= sentence.length() - 1; i++) {
+            char character = sentence.charAt(i);
+            if (character == 'l') {
+             countLInSentence += 1;
+            }
+        }
+        System.out.println(countLInSentence);
 
 
     }
