@@ -1,3 +1,4 @@
-com/jpmc/practice/EmployeeController.class
+com/jpmc/practice/model/Employee.class
 com/jpmc/practice/DemoApiApplication.class
-com/jpmc/practice/Employee.class
+com/jpmc/practice/controller/EmployeeController.class
+com/jpmc/practice/service/EmployeeService.class

@@ -1,8 +1,12 @@
-package com.jpmc.practice;
+package com.jpmc.practice.controller;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.jpmc.practice.model.Employee;
+import com.jpmc.practice.service.EmployeeService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 // @RestController tells Spring: "this class handles HTTP requests and returns data"
 // @RequestMapping sets the base URL for all endpoints in this class
@@ -10,40 +14,31 @@ import java.util.List;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    // In-memory list — acting as our "database" for now
-    // We'll replace this with a real database next session
-    private List<Employee> employees = new ArrayList<>(List.of(
-        new Employee(1, "Alice Johnson", "Engineering", 95000),
-        new Employee(2, "Bob Smith", "Product", 88000),
-        new Employee(3, "Sara Lee", "Engineering", 102000)
-    ));
+    @Autowired
+    private EmployeeService employeeService;
 
     // GET /employees — return all employees
     @GetMapping
     public List<Employee> getAllEmployees() {
-        return employees;
+        return employeeService.getEmployees();
     }
 
     // GET /employees/{id} — return one employee by id
     @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable int id) {
-        return employees.stream()
-                .filter(e -> e.getId() == id)
-                .findFirst()
-                .orElse(null);
+        return employeeService.getEmployeeByID(id);
     }
 
     // POST /employees — add a new employee
     @PostMapping
     public Employee addEmployee(@RequestBody Employee employee) {
-        employees.add(employee);
-        return employee;
+        return employeeService.addEmployee(employee);
     }
 
     // DELETE /employees/{id} — remove an employee
     @DeleteMapping("/{id}")
     public String deleteEmployee(@PathVariable int id) {
-        employees.removeIf(e -> e.getId() == id);
+        employeeService.deleteEmployee(id);
         return "Employee " + id + " deleted";
     }
 }

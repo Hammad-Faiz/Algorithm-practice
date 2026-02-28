@@ -1,4 +1,4 @@
-package com.jpmc.practice;
+package com.jpmc.practice.model;
 
 // This is the Model — it represents the data we're working with
 // Think of it like a blueprint for what an Employee object looks like

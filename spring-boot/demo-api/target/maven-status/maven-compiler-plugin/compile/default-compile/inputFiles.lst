@@ -1,3 +1,4 @@
-/Users/hammadfaiz/Downloads/Learning/spring-boot-learning/spring-boot/demo-api/src/main/java/com/jpmc/practice/EmployeeController.java
-/Users/hammadfaiz/Downloads/Learning/spring-boot-learning/spring-boot/demo-api/src/main/java/com/jpmc/practice/Employee.java
+/Users/hammadfaiz/Downloads/Learning/spring-boot-learning/spring-boot/demo-api/src/main/java/com/jpmc/practice/controller/EmployeeController.java
+/Users/hammadfaiz/Downloads/Learning/spring-boot-learning/spring-boot/demo-api/src/main/java/com/jpmc/practice/service/EmployeeService.java
+/Users/hammadfaiz/Downloads/Learning/spring-boot-learning/spring-boot/demo-api/src/main/java/com/jpmc/practice/model/Employee.java
 /Users/hammadfaiz/Downloads/Learning/spring-boot-learning/spring-boot/demo-api/src/main/java/com/jpmc/practice/DemoApiApplication.java
