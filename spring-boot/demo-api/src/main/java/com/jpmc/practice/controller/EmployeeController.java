@@ -14,8 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
+
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     // GET /employees — return all employees
     @GetMapping
