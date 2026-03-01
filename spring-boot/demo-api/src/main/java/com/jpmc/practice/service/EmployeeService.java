@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import com.jpmc.practice.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.jpmc.practice.exception.EmployeeNotFoundException;
 
 @Service
 public class EmployeeService {
-
 
     @Autowired
     private EmployeeRepository employeeRepository;
@@ -18,7 +18,8 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeByID(int id) {
-        return employeeRepository.findById(id).orElse(null);
+        return employeeRepository.findById(id)
+                .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
     public Employee addEmployee(Employee employee) {
