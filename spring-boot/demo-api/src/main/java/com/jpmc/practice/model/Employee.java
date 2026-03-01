@@ -1,10 +1,15 @@
 package com.jpmc.practice.model;
+import jakarta.persistence.*;
 
 // This is the Model — it represents the data we're working with
 // Think of it like a blueprint for what an Employee object looks like
 
+@Entity
+@Table(name = "employees")
 public class Employee {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String department;
@@ -17,6 +22,8 @@ public class Employee {
         this.department = department;
         this.salary = salary;
     }
+
+    public Employee() {}
 
     // Getters — Spring needs these to convert Employee to JSON
     public int getId() { return id; }
