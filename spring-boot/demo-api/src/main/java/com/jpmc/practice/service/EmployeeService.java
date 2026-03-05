@@ -28,6 +28,9 @@ public class EmployeeService {
 
 
     public void deleteEmployee(int id) {
+        if (!employeeRepository.existsById(id)) {
+            throw new EmployeeNotFoundException(id);
+        }
         employeeRepository.deleteById(id);
     }
 
