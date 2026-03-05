@@ -30,4 +30,16 @@ public class EmployeeService {
     public void deleteEmployee(int id) {
         employeeRepository.deleteById(id);
     }
+
+    public String updateEmployee(int id, Employee employee) {
+        Employee findEmployee = employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
+        findEmployee.setName(employee.getName());
+        findEmployee.setDepartment(employee.getDepartment());
+        findEmployee.setSalary(employee.getSalary());
+        employeeRepository.save(findEmployee);
+        String returnMessage  = "The employee with " + id + " was updated";
+        return returnMessage;
+    }
+
+
 }
