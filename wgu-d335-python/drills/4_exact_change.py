@@ -16,4 +16,35 @@ cents = int(input())
 if cents <= 0:
     print("No change")
 else:
-    pass  # TODO: cascade // and % through 100, 25, 10, 5, 1 — only print counts > 0
+    dollars = cents // 100
+    cents = cents % 100
+    if dollars > 1:
+        print(dollars, "Dollars")
+    elif dollars > 0:
+        print(dollars, "Dollar") 
+
+    quarters = cents // 25
+    cents = cents % 25
+    if quarters > 1:
+        print(quarters, "Quarters")
+    elif quarters > 0:
+        print(quarters, "Quarter")
+    
+    dimes = cents // 10
+    cents = cents % 10
+    if dimes > 1:
+        print(dimes, "Dimes")
+    elif dimes > 0:
+        print(dimes, "Dime")
+    
+    nickles = cents // 5
+    cents = cents % 5
+    if nickles > 1:
+        print(nickles, "Nickels")
+    elif nickles > 0:
+        print(nickles, "Nickel")
+
+    if cents > 1:
+        print(cents, "Pennies")
+    elif cents > 0:
+        print(cents, "Penny")

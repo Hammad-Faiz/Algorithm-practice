@@ -12,4 +12,27 @@
 
 ounces = int(input())
 
-# TODO: cascade // and % — ounces -> (pounds, leftover ounces) -> (tons, leftover pounds)
+pounds = ounces // 16
+ounces %= 16
+tons = pounds // 2000
+pounds %= 2000
+
+
+tons_to_ounces = 2000 * 16
+
+print(f"1 tone is {tons_to_ounces} ounces")
+
+
+
+tons = ounces * 
+
+
+
+
+
+
+
+
+
+
+

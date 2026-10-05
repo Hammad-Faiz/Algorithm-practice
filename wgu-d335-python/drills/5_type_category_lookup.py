@@ -1,5 +1,5 @@
-# DRILL 5 — different pattern: type-dispatch using type(x).__name__.
-#
+# DRILL 5 — different pattern:
+
 # Given the list below, accept an integer index. Retrieve that element,
 # get its type name, then categorize it:
 #   - "iterable" types (list, str, dict) -> "This element is iterable."
@@ -17,5 +17,14 @@ data_mixture = ["Python is fun", 2024, 5.67, ["apple", "banana", "coconut"], Non
 print("Enter index:")
 index = int(input())
 
-# TODO: look up the element, get its type name with type(x).__name__,
-# then branch into the three category messages above.
+
+element_in_array = data_mixture[index]
+
+type_name = type(element_in_array).__name__
+
+if type_name in ["list", "str", "dict"]:
+    print(f"Element: {element_in_array}, Type: {type_name}, Message: This element is iterable.")
+elif type_name in ["int", "float"]:
+    print(f"Element: {element_in_array}, Type: {type_name}, Message: This element is numeric.")
+else:
+    print(f"Element: {element_in_array}, Type: {type_name}, Message: This is a different data type.")

@@ -14,3 +14,5 @@
 total_seconds = int(input())
 
 # TODO: cascade // and % — seconds -> (minutes, leftover seconds) -> (hours, leftover minutes)
+
+
