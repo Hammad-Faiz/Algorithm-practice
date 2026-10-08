@@ -1,6 +1,3 @@
-# DRILL 7 — plain formula, but the "no rounding" requirement is a trick:
-# Python's / already returns a float, so no round()/formatting is needed.
-#
 # Three integers: base1, base2, height. Area = ((b1+b2) * h) / 2.
 #
 # Format:
@@ -12,4 +9,7 @@ base_1 = int(input())
 base_2 = int(input())
 height = int(input())
 
-# TODO: compute and print — remember plain "/" already gives a float
+
+area = ((base_1 + base_2) * height) / 2
+
+print(f"Trapezoid area: {area} square meters")
